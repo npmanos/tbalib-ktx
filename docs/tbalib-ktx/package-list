@@ -1,0 +1,6 @@
+$dokka.format:gfm
+$dokka.linkExtension:md
+
+com.npmanos.tbalib.api
+com.npmanos.tbalib.infrastructure
+com.npmanos.tbalib.model

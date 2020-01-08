@@ -1,4 +1,4 @@
-group 'org.eastonrobotics'
+group 'com.npmanos'
 version '3.5.1'
 
 wrapper {
@@ -8,21 +8,26 @@ wrapper {
 
 buildscript {
     ext.kotlin_version = '1.3.61'
+    ext.dokka_version = '0.10.0'
     ext.retrofitVersion = '2.6.2'
 
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:${dokka_version}"
     }
 }
 
 apply plugin: 'maven-publish'
 apply plugin: 'kotlin'
+apply plugin: 'org.jetbrains.dokka'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 test {
@@ -56,5 +61,26 @@ publishing {
         gpr(MavenPublication) {
             from(components.java)
         }
+    }
+}
+
+dokka {
+    outputFormat = "gfm"
+    outputDirectory = "docs/"
+
+    configuration {
+        moduleName = "tbalib-ktx"
+
+        sourceLink {
+            path = "./"
+            url = "https://github.com/npmanos/tbalib-ktx/blob/master"
+            lineSuffix = "#L"
+        }
+
+//        jdkVersion = "8"
+
+//        externalDocumentationLink {
+//            url = new URL("https://npmanos.github.io/tbalib-ktx/")
+//        }
     }
 }
