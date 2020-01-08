@@ -18,6 +18,7 @@ buildscript {
     }
 }
 
+apply plugin: 'maven-publish'
 apply plugin: 'kotlin'
 
 repositories {
@@ -38,4 +39,22 @@ dependencies {
     compile "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
     compile "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
     testCompile "io.kotlintest:kotlintest-runner-junit5:3.1.0"
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/npmanos/tbalib-ktx")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("PASSWORD")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
+    }
 }
