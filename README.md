@@ -225,5 +225,5 @@ Class | Method | HTTP request | Description
 - **Type**: API key
 - **API key parameter name**: X-TBA-Auth-Key
 - **Location**: HTTP header
-- **Usage**: Set [ApiClient](/src/main/kotlin/org/eastonrobotics/tbalib/infrastructure/ApiClient).apiKey
+- **Usage**: Set [ApiClient](/src/main/kotlin/org/eastonrobotics/tbalib/infrastructure/ApiClient.kt).apiKey
 
