@@ -11,9 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.MatchAlliance
-
-import com.squareup.moshi.Json
 /**
  * A list of alliances, the teams on the alliances, and their score.
  * @param red 
@@ -21,9 +18,7 @@ import com.squareup.moshi.Json
  */
 
 data class MatchSimpleAlliances (
-    @Json(name = "red")
     val red: MatchAlliance? = null,
-    @Json(name = "blue")
     val blue: MatchAlliance? = null
 ) 
 

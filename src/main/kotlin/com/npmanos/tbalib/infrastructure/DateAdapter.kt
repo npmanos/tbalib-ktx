@@ -5,19 +5,22 @@ import com.google.gson.stream.JsonReader
 import com.google.gson.stream.JsonToken.NULL
 import com.google.gson.stream.JsonWriter
 import java.io.IOException
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
-class ByteArrayAdapter : TypeAdapter<ByteArray>() {
+class DateAdapter(val formatter: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.getDefault())) : TypeAdapter<Date>() {
     @Throws(IOException::class)
-    override fun write(out: JsonWriter?, value: ByteArray?) {
+    override fun write(out: JsonWriter?, value: Date?) {
         if (value == null) {
             out?.nullValue()
         } else {
-            out?.value(String(value))
+            out?.value(formatter.format(value))
         }
     }
 
     @Throws(IOException::class)
-    override fun read(out: JsonReader?): ByteArray? {
+    override fun read(out: JsonReader?): Date? {
         out ?: return null
 
         when (out.peek()) {
@@ -26,7 +29,7 @@ class ByteArrayAdapter : TypeAdapter<ByteArray>() {
                 return null
             }
             else -> {
-                return out.nextString().toByteArray()
+                return formatter.parse(out.nextString())
             }
         }
     }

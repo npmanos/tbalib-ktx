@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * The `Media` object contains a reference for most any media associated with a team or event on TBA.
  * @param type String type of the media element.
@@ -25,22 +24,16 @@ import com.squareup.moshi.Json
 
 data class Media (
     /* String type of the media element. */
-    @Json(name = "type")
     val type: Media.Type,
     /* The key used to identify this media on the media site. */
-    @Json(name = "foreign_key")
     val foreignKey: kotlin.String,
     /* If required, a JSON dict of additional media information. */
-    @Json(name = "details")
     val details: kotlin.Any? = null,
     /* True if the media is of high quality. */
-    @Json(name = "preferred")
     val preferred: kotlin.Boolean? = null,
     /* Direct URL to the media. */
-    @Json(name = "direct_url")
     val directUrl: kotlin.String? = null,
     /* The URL that leads to the full web page for the media, if one exists. */
-    @Json(name = "view_url")
     val viewUrl: kotlin.String? = null
 ) 
 
@@ -50,21 +43,7 @@ data class Media (
     * String type of the media element.
     * Values: youtube,cdphotothread,imgur,facebookProfile,youtubeChannel,twitterProfile,githubProfile,instagramProfile,periscopeProfile,grabcad,instagramImage,externalLink,avatar
     */
-    
-    enum class Type(val value: kotlin.String){
-        @Json(name = "youtube") youtube("youtube"),
-        @Json(name = "cdphotothread") cdphotothread("cdphotothread"),
-        @Json(name = "imgur") imgur("imgur"),
-        @Json(name = "facebook-profile") facebookProfile("facebook-profile"),
-        @Json(name = "youtube-channel") youtubeChannel("youtube-channel"),
-        @Json(name = "twitter-profile") twitterProfile("twitter-profile"),
-        @Json(name = "github-profile") githubProfile("github-profile"),
-        @Json(name = "instagram-profile") instagramProfile("instagram-profile"),
-        @Json(name = "periscope-profile") periscopeProfile("periscope-profile"),
-        @Json(name = "grabcad") grabcad("grabcad"),
-        @Json(name = "instagram-image") instagramImage("instagram-image"),
-        @Json(name = "external-link") externalLink("external-link"),
-        @Json(name = "avatar") avatar("avatar");
-    }
+
+    enum class Type(val value: kotlin.String)
 }
 

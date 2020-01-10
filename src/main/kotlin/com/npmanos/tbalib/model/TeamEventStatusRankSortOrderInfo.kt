@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param precision The number of digits of precision used for this value, eg `2` would correspond to a value of `101.11` while `0` would correspond to `101`.
@@ -21,10 +20,8 @@ import com.squareup.moshi.Json
 
 data class TeamEventStatusRankSortOrderInfo (
     /* The number of digits of precision used for this value, eg `2` would correspond to a value of `101.11` while `0` would correspond to `101`. */
-    @Json(name = "precision")
     val precision: kotlin.Int? = null,
     /* The descriptive name of the value used to sort the ranking. */
-    @Json(name = "name")
     val name: kotlin.String? = null
 ) 
 

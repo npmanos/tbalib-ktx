@@ -1,18 +1,10 @@
 package com.npmanos.tbalib.api
 
-import com.npmanos.tbalib.infrastructure.CollectionFormats.*
-import retrofit2.http.*
+import com.npmanos.tbalib.model.*
 import retrofit2.Response
-import okhttp3.RequestBody
-import okhttp3.ResponseBody
-import okhttp3.MultipartBody
-
-import com.npmanos.tbalib.model.DistrictRanking
-import com.npmanos.tbalib.model.Event
-import com.npmanos.tbalib.model.EventSimple
-import com.npmanos.tbalib.model.Team
-import com.npmanos.tbalib.model.TeamEventStatus
-import com.npmanos.tbalib.model.TeamSimple
+import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.Path
 
 interface ListApiService {
     /**

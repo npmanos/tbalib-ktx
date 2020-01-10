@@ -11,9 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.MatchSimpleAlliances
-
-import com.squareup.moshi.Json
 /**
  * 
  * @param key TBA match key with the format `yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]`, where `yyyy` is the year, and `EVENT_CODE` is the event code of the event, `COMP_LEVEL` is (qm, ef, qf, sf, f), and `MATCH_NUMBER` is the match number in the competition level. A set number may append the competition level if more than one match in required per set.
@@ -30,33 +27,23 @@ import com.squareup.moshi.Json
 
 data class MatchSimple (
     /* TBA match key with the format `yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]`, where `yyyy` is the year, and `EVENT_CODE` is the event code of the event, `COMP_LEVEL` is (qm, ef, qf, sf, f), and `MATCH_NUMBER` is the match number in the competition level. A set number may append the competition level if more than one match in required per set. */
-    @Json(name = "key")
     val key: kotlin.String,
     /* The competition level the match was played at. */
-    @Json(name = "comp_level")
     val compLevel: MatchSimple.CompLevel,
     /* The set number in a series of matches where more than one match is required in the match series. */
-    @Json(name = "set_number")
     val setNumber: kotlin.Int,
     /* The match number of the match in the competition level. */
-    @Json(name = "match_number")
     val matchNumber: kotlin.Int,
     /* Event key of the event the match was played at. */
-    @Json(name = "event_key")
     val eventKey: kotlin.String,
-    @Json(name = "alliances")
     val alliances: MatchSimpleAlliances? = null,
     /* The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie. */
-    @Json(name = "winning_alliance")
     val winningAlliance: MatchSimple.WinningAlliance? = null,
     /* UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule. */
-    @Json(name = "time")
     val time: kotlin.Long? = null,
     /* UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time. */
-    @Json(name = "predicted_time")
     val predictedTime: kotlin.Long? = null,
     /* UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time. */
-    @Json(name = "actual_time")
     val actualTime: kotlin.Long? = null
 ) 
 
@@ -66,23 +53,14 @@ data class MatchSimple (
     * The competition level the match was played at.
     * Values: qm,ef,qf,sf,f
     */
-    
-    enum class CompLevel(val value: kotlin.String){
-        @Json(name = "qm") qm("qm"),
-        @Json(name = "ef") ef("ef"),
-        @Json(name = "qf") qf("qf"),
-        @Json(name = "sf") sf("sf"),
-        @Json(name = "f") f("f");
-    }
+
+    enum class CompLevel(val value: kotlin.String)
+
     /**
     * The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.
     * Values: red,blue,eMPTY
     */
-    
-    enum class WinningAlliance(val value: kotlin.String){
-        @Json(name = "red") red("red"),
-        @Json(name = "blue") blue("blue"),
-        @Json(name = "") eMPTY("");
-    }
+
+    enum class WinningAlliance(val value: kotlin.String)
 }
 

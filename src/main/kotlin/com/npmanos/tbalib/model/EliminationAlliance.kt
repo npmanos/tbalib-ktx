@@ -11,10 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.EliminationAllianceBackup
-import com.npmanos.tbalib.model.EliminationAllianceStatus
-
-import com.squareup.moshi.Json
 /**
  * 
  * @param picks List of team keys picked for the alliance. First pick is captain.
@@ -26,17 +22,12 @@ import com.squareup.moshi.Json
 
 data class EliminationAlliance (
     /* List of team keys picked for the alliance. First pick is captain. */
-    @Json(name = "picks")
     val picks: kotlin.collections.List<kotlin.String>,
     /* Alliance name, may be null. */
-    @Json(name = "name")
     val name: kotlin.String? = null,
-    @Json(name = "backup")
     val backup: EliminationAllianceBackup? = null,
     /* List of teams that declined the alliance. */
-    @Json(name = "declines")
     val declines: kotlin.collections.List<kotlin.String>? = null,
-    @Json(name = "status")
     val status: EliminationAllianceStatus? = null
 ) 
 

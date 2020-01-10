@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * Backup status, may be null.
  * @param out TBA key for the team replaced by the backup.
@@ -21,10 +20,8 @@ import com.squareup.moshi.Json
 
 data class TeamEventStatusAllianceBackup (
     /* TBA key for the team replaced by the backup. */
-    @Json(name = "out")
     val out: kotlin.String? = null,
     /* TBA key for the backup team called in. */
-    @Json(name = "in")
     val `in`: kotlin.String? = null
 ) 
 

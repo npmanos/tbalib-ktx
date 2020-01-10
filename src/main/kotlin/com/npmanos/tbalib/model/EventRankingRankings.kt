@@ -11,9 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.WLTRecord
-
-import com.squareup.moshi.Json
 /**
  * 
  * @param matchesPlayed Number of matches played by this team.
@@ -28,27 +25,19 @@ import com.squareup.moshi.Json
 
 data class EventRankingRankings (
     /* Number of matches played by this team. */
-    @Json(name = "matches_played")
     val matchesPlayed: kotlin.Int,
-    @Json(name = "record")
     val record: WLTRecord,
     /* The team's rank at the event as provided by FIRST. */
-    @Json(name = "rank")
     val rank: kotlin.Int,
     /* Number of times disqualified. */
-    @Json(name = "dq")
     val dq: kotlin.Int,
     /* The team with this rank. */
-    @Json(name = "team_key")
     val teamKey: kotlin.String,
     /* The average match score during qualifications. Year specific. May be null if not relevant for a given year. */
-    @Json(name = "qual_average")
     val qualAverage: kotlin.Int? = null,
     /* Additional special data on the team's performance calculated by TBA. */
-    @Json(name = "extra_stats")
     val extraStats: kotlin.collections.List<java.math.BigDecimal>? = null,
     /* Additional year-specific information, may be null. See parent `sort_order_info` for details. */
-    @Json(name = "sort_orders")
     val sortOrders: kotlin.collections.List<java.math.BigDecimal>? = null
 ) 
 

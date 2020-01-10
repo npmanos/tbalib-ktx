@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param score Score for this alliance. Will be null or -1 for an unplayed match.
@@ -23,15 +22,11 @@ import com.squareup.moshi.Json
 
 data class MatchAlliance (
     /* Score for this alliance. Will be null or -1 for an unplayed match. */
-    @Json(name = "score")
     val score: kotlin.Int,
-    @Json(name = "team_keys")
     val teamKeys: kotlin.collections.List<kotlin.String>,
     /* TBA team keys (eg `frc254`) of any teams playing as a surrogate. */
-    @Json(name = "surrogate_team_keys")
     val surrogateTeamKeys: kotlin.collections.List<kotlin.String>? = null,
     /* TBA team keys (eg `frc254`) of any disqualified teams. */
-    @Json(name = "dq_team_keys")
     val dqTeamKeys: kotlin.collections.List<kotlin.String>? = null
 ) 
 

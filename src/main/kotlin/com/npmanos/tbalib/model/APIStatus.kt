@@ -11,9 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.APIStatusAppVersion
-
-import com.squareup.moshi.Json
 /**
  * 
  * @param currentSeason Year of the current FRC season.
@@ -26,20 +23,14 @@ import com.squareup.moshi.Json
 
 data class APIStatus (
     /* Year of the current FRC season. */
-    @Json(name = "current_season")
     val currentSeason: kotlin.Int,
     /* Maximum FRC season year for valid queries. */
-    @Json(name = "max_season")
     val maxSeason: kotlin.Int,
     /* True if the entire FMS API provided by FIRST is down. */
-    @Json(name = "is_datafeed_down")
     val isDatafeedDown: kotlin.Boolean,
     /* An array of strings containing event keys of any active events that are no longer updating. */
-    @Json(name = "down_events")
     val downEvents: kotlin.collections.List<kotlin.String>,
-    @Json(name = "ios")
     val ios: APIStatusAppVersion,
-    @Json(name = "android")
     val android: APIStatusAppVersion
 ) 
 

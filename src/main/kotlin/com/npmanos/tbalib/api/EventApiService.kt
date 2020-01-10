@@ -1,25 +1,10 @@
 package com.npmanos.tbalib.api
 
-import com.npmanos.tbalib.infrastructure.CollectionFormats.*
-import retrofit2.http.*
+import com.npmanos.tbalib.model.*
 import retrofit2.Response
-import okhttp3.RequestBody
-import okhttp3.ResponseBody
-import okhttp3.MultipartBody
-
-import com.npmanos.tbalib.model.Award
-import com.npmanos.tbalib.model.EliminationAlliance
-import com.npmanos.tbalib.model.Event
-import com.npmanos.tbalib.model.EventDistrictPoints
-import com.npmanos.tbalib.model.EventInsights
-import com.npmanos.tbalib.model.EventOPRs
-import com.npmanos.tbalib.model.EventRanking
-import com.npmanos.tbalib.model.EventSimple
-import com.npmanos.tbalib.model.Match
-import com.npmanos.tbalib.model.MatchSimple
-import com.npmanos.tbalib.model.Team
-import com.npmanos.tbalib.model.TeamEventStatus
-import com.npmanos.tbalib.model.TeamSimple
+import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.Path
 
 interface EventApiService {
     /**

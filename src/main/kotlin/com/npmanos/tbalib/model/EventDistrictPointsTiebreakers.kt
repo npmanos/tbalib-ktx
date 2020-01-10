@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param highestQualScores 
@@ -20,9 +19,7 @@ import com.squareup.moshi.Json
  */
 
 data class EventDistrictPointsTiebreakers (
-    @Json(name = "highest_qual_scores")
     val highestQualScores: kotlin.collections.List<kotlin.Int>? = null,
-    @Json(name = "qual_wins")
     val qualWins: kotlin.Int? = null
 ) 
 

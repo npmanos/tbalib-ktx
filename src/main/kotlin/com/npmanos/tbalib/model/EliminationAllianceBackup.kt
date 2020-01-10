@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * Backup team called in, may be null.
  * @param `in` Team key that was called in as the backup.
@@ -21,10 +20,8 @@ import com.squareup.moshi.Json
 
 data class EliminationAllianceBackup (
     /* Team key that was called in as the backup. */
-    @Json(name = "in")
     val `in`: kotlin.String? = null,
     /* Team key that was replaced by the backup team. */
-    @Json(name = "out")
     val out: kotlin.String? = null
 ) 
 

@@ -11,11 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.EventRankingExtraStatsInfo
-import com.npmanos.tbalib.model.EventRankingRankings
-import com.npmanos.tbalib.model.EventRankingSortOrderInfo
-
-import com.squareup.moshi.Json
 /**
  * 
  * @param rankings List of rankings at the event.
@@ -25,13 +20,10 @@ import com.squareup.moshi.Json
 
 data class EventRanking (
     /* List of rankings at the event. */
-    @Json(name = "rankings")
     val rankings: kotlin.collections.List<EventRankingRankings>,
     /* List of year-specific values provided in the `sort_orders` array for each team. */
-    @Json(name = "sort_order_info")
     val sortOrderInfo: kotlin.collections.List<EventRankingSortOrderInfo>,
     /* List of special TBA-generated values provided in the `extra_stats` array for each item. */
-    @Json(name = "extra_stats_info")
     val extraStatsInfo: kotlin.collections.List<EventRankingExtraStatsInfo>? = null
 ) 
 

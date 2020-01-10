@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param minAppVersion Internal use - Minimum application version required to correctly connect and process data.
@@ -21,10 +20,8 @@ import com.squareup.moshi.Json
 
 data class APIStatusAppVersion (
     /* Internal use - Minimum application version required to correctly connect and process data. */
-    @Json(name = "min_app_version")
     val minAppVersion: kotlin.Int,
     /* Internal use - Latest application version available. */
-    @Json(name = "latest_app_version")
     val latestAppVersion: kotlin.Int
 ) 
 

@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param key TBA team key with the format `frcXXXX` with `XXXX` representing the team number.
@@ -26,25 +25,18 @@ import com.squareup.moshi.Json
 
 data class TeamSimple (
     /* TBA team key with the format `frcXXXX` with `XXXX` representing the team number. */
-    @Json(name = "key")
     val key: kotlin.String,
     /* Official team number issued by FIRST. */
-    @Json(name = "team_number")
     val teamNumber: kotlin.Int,
     /* Official long name registered with FIRST. */
-    @Json(name = "name")
     val name: kotlin.String,
     /* Team nickname provided by FIRST. */
-    @Json(name = "nickname")
     val nickname: kotlin.String? = null,
     /* City of team derived from parsing the address registered with FIRST. */
-    @Json(name = "city")
     val city: kotlin.String? = null,
     /* State of team derived from parsing the address registered with FIRST. */
-    @Json(name = "state_prov")
     val stateProv: kotlin.String? = null,
     /* Country of team derived from parsing the address registered with FIRST. */
-    @Json(name = "country")
     val country: kotlin.String? = null
 ) 
 

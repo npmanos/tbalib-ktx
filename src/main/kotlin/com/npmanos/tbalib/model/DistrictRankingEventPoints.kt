@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param districtCmp `true` if this event is a District Championship event.
@@ -26,25 +25,18 @@ import com.squareup.moshi.Json
 
 data class DistrictRankingEventPoints (
     /* `true` if this event is a District Championship event. */
-    @Json(name = "district_cmp")
     val districtCmp: kotlin.Boolean,
     /* Total points awarded at this event. */
-    @Json(name = "total")
     val total: kotlin.Int,
     /* Points awarded for alliance selection. */
-    @Json(name = "alliance_points")
     val alliancePoints: kotlin.Int,
     /* Points awarded for elimination match performance. */
-    @Json(name = "elim_points")
     val elimPoints: kotlin.Int,
     /* Points awarded for event awards. */
-    @Json(name = "award_points")
     val awardPoints: kotlin.Int,
     /* TBA Event key for this event. */
-    @Json(name = "event_key")
     val eventKey: kotlin.String,
     /* Points awarded for qualification match performance. */
-    @Json(name = "qual_points")
     val qualPoints: kotlin.Int
 ) 
 

@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * A Win-Loss-Tie record for a team, or an alliance.
  * @param losses Number of losses.
@@ -22,13 +21,10 @@ import com.squareup.moshi.Json
 
 data class WLTRecord (
     /* Number of losses. */
-    @Json(name = "losses")
     val losses: kotlin.Int,
     /* Number of wins. */
-    @Json(name = "wins")
     val wins: kotlin.Int,
     /* Number of ties. */
-    @Json(name = "ties")
     val ties: kotlin.Int
 ) 
 

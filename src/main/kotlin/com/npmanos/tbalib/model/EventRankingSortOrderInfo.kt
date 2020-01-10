@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param precision Integer expressing the number of digits of precision in the number provided in `sort_orders`.
@@ -21,10 +20,8 @@ import com.squareup.moshi.Json
 
 data class EventRankingSortOrderInfo (
     /* Integer expressing the number of digits of precision in the number provided in `sort_orders`. */
-    @Json(name = "precision")
     val precision: kotlin.Int,
     /* Name of the field used in the `sort_order` array. */
-    @Json(name = "name")
     val name: kotlin.String
 ) 
 

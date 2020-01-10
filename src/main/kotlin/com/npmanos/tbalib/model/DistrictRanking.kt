@@ -11,9 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.DistrictRankingEventPoints
-
-import com.squareup.moshi.Json
 /**
  * Rank of a team in a district.
  * @param teamKey TBA team key for the team.
@@ -25,19 +22,14 @@ import com.squareup.moshi.Json
 
 data class DistrictRanking (
     /* TBA team key for the team. */
-    @Json(name = "team_key")
     val teamKey: kotlin.String,
     /* Numerical rank of the team, 1 being top rank. */
-    @Json(name = "rank")
     val rank: kotlin.Int,
     /* Total district points for the team. */
-    @Json(name = "point_total")
     val pointTotal: kotlin.Int,
     /* Any points added to a team as a result of the rookie bonus. */
-    @Json(name = "rookie_bonus")
     val rookieBonus: kotlin.Int? = null,
     /* List of events that contributed to the point total for the team. */
-    @Json(name = "event_points")
     val eventPoints: kotlin.collections.List<DistrictRankingEventPoints>? = null
 ) 
 

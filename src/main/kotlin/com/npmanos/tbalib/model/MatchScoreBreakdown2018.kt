@@ -11,9 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.MatchScoreBreakdown2018Alliance
-
-import com.squareup.moshi.Json
 /**
  * See the 2018 FMS API documentation for a description of each value.
  * @param blue 
@@ -21,9 +18,7 @@ import com.squareup.moshi.Json
  */
 
 data class MatchScoreBreakdown2018 (
-    @Json(name = "blue")
     val blue: MatchScoreBreakdown2018Alliance? = null,
-    @Json(name = "red")
     val red: MatchScoreBreakdown2018Alliance? = null
 ) 
 

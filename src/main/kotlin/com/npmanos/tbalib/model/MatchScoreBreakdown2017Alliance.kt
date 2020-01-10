@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param autoPoints 
@@ -51,71 +50,38 @@ import com.squareup.moshi.Json
  */
 
 data class MatchScoreBreakdown2017Alliance (
-    @Json(name = "autoPoints")
     val autoPoints: kotlin.Int? = null,
-    @Json(name = "teleopPoints")
     val teleopPoints: kotlin.Int? = null,
-    @Json(name = "foulPoints")
     val foulPoints: kotlin.Int? = null,
-    @Json(name = "adjustPoints")
     val adjustPoints: kotlin.Int? = null,
-    @Json(name = "totalPoints")
     val totalPoints: kotlin.Int? = null,
-    @Json(name = "robot1Auto")
     val robot1Auto: MatchScoreBreakdown2017Alliance.Robot1Auto? = null,
-    @Json(name = "robot2Auto")
     val robot2Auto: MatchScoreBreakdown2017Alliance.Robot2Auto? = null,
-    @Json(name = "robot3Auto")
     val robot3Auto: MatchScoreBreakdown2017Alliance.Robot3Auto? = null,
-    @Json(name = "rotor1Auto")
     val rotor1Auto: kotlin.Boolean? = null,
-    @Json(name = "rotor2Auto")
     val rotor2Auto: kotlin.Boolean? = null,
-    @Json(name = "autoFuelLow")
     val autoFuelLow: kotlin.Int? = null,
-    @Json(name = "autoFuelHigh")
     val autoFuelHigh: kotlin.Int? = null,
-    @Json(name = "autoMobilityPoints")
     val autoMobilityPoints: kotlin.Int? = null,
-    @Json(name = "autoRotorPoints")
     val autoRotorPoints: kotlin.Int? = null,
-    @Json(name = "autoFuelPoints")
     val autoFuelPoints: kotlin.Int? = null,
-    @Json(name = "teleopFuelPoints")
     val teleopFuelPoints: kotlin.Int? = null,
-    @Json(name = "teleopFuelLow")
     val teleopFuelLow: kotlin.Int? = null,
-    @Json(name = "teleopFuelHigh")
     val teleopFuelHigh: kotlin.Int? = null,
-    @Json(name = "teleopRotorPoints")
     val teleopRotorPoints: kotlin.Int? = null,
-    @Json(name = "kPaRankingPointAchieved")
     val kPaRankingPointAchieved: kotlin.Boolean? = null,
-    @Json(name = "teleopTakeoffPoints")
     val teleopTakeoffPoints: kotlin.Int? = null,
-    @Json(name = "kPaBonusPoints")
     val kPaBonusPoints: kotlin.Int? = null,
-    @Json(name = "rotorBonusPoints")
     val rotorBonusPoints: kotlin.Int? = null,
-    @Json(name = "rotor1Engaged")
     val rotor1Engaged: kotlin.Boolean? = null,
-    @Json(name = "rotor2Engaged")
     val rotor2Engaged: kotlin.Boolean? = null,
-    @Json(name = "rotor3Engaged")
     val rotor3Engaged: kotlin.Boolean? = null,
-    @Json(name = "rotor4Engaged")
     val rotor4Engaged: kotlin.Boolean? = null,
-    @Json(name = "rotorRankingPointAchieved")
     val rotorRankingPointAchieved: kotlin.Boolean? = null,
-    @Json(name = "techFoulCount")
     val techFoulCount: kotlin.Int? = null,
-    @Json(name = "foulCount")
     val foulCount: kotlin.Int? = null,
-    @Json(name = "touchpadNear")
     val touchpadNear: kotlin.String? = null,
-    @Json(name = "touchpadMiddle")
     val touchpadMiddle: kotlin.String? = null,
-    @Json(name = "touchpadFar")
     val touchpadFar: kotlin.String? = null
 ) 
 
@@ -125,31 +91,21 @@ data class MatchScoreBreakdown2017Alliance (
     * 
     * Values: unknown,mobility,none
     */
-    
-    enum class Robot1Auto(val value: kotlin.String){
-        @Json(name = "Unknown") unknown("Unknown"),
-        @Json(name = "Mobility") mobility("Mobility"),
-        @Json(name = "None") none("None");
-    }
+
+    enum class Robot1Auto(val value: kotlin.String)
+
     /**
     * 
     * Values: unknown,mobility,none
     */
-    
-    enum class Robot2Auto(val value: kotlin.String){
-        @Json(name = "Unknown") unknown("Unknown"),
-        @Json(name = "Mobility") mobility("Mobility"),
-        @Json(name = "None") none("None");
-    }
+
+    enum class Robot2Auto(val value: kotlin.String)
+
     /**
     * 
     * Values: unknown,mobility,none
     */
-    
-    enum class Robot3Auto(val value: kotlin.String){
-        @Json(name = "Unknown") unknown("Unknown"),
-        @Json(name = "Mobility") mobility("Mobility"),
-        @Json(name = "None") none("None");
-    }
+
+    enum class Robot3Auto(val value: kotlin.String)
 }
 

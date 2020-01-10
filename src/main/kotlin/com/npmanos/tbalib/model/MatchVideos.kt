@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param type Can be one of 'youtube' or 'tba'
@@ -21,10 +20,8 @@ import com.squareup.moshi.Json
 
 data class MatchVideos (
     /* Can be one of 'youtube' or 'tba' */
-    @Json(name = "type")
     val type: kotlin.String? = null,
     /* Unique key representing this video */
-    @Json(name = "key")
     val key: kotlin.String? = null
 ) 
 

@@ -11,9 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.MatchScoreBreakdown2019Alliance
-
-import com.squareup.moshi.Json
 /**
  * See the 2019 FMS API documentation for a description of each value. https://frcevents2.docs.apiary.io/#reference/match-results/score-details
  * @param blue 
@@ -21,9 +18,7 @@ import com.squareup.moshi.Json
  */
 
 data class MatchScoreBreakdown2019 (
-    @Json(name = "blue")
     val blue: MatchScoreBreakdown2019Alliance? = null,
-    @Json(name = "red")
     val red: MatchScoreBreakdown2019Alliance? = null
 ) 
 

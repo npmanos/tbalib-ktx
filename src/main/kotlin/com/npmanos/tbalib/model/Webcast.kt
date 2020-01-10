@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param type Type of webcast, typically descriptive of the streaming provider.
@@ -22,13 +21,10 @@ import com.squareup.moshi.Json
 
 data class Webcast (
     /* Type of webcast, typically descriptive of the streaming provider. */
-    @Json(name = "type")
     val type: Webcast.Type,
     /* Type specific channel information. May be the YouTube stream, or Twitch channel name. In the case of iframe types, contains HTML to embed the stream in an HTML iframe. */
-    @Json(name = "channel")
     val channel: kotlin.String,
     /* File identification as may be required for some types. May be null. */
-    @Json(name = "file")
     val file: kotlin.String? = null
 ) 
 
@@ -38,20 +34,7 @@ data class Webcast (
     * Type of webcast, typically descriptive of the streaming provider.
     * Values: youtube,twitch,ustream,iframe,html5,rtmp,livestream,directLink,mms,justin,stemtv,dacast
     */
-    
-    enum class Type(val value: kotlin.String){
-        @Json(name = "youtube") youtube("youtube"),
-        @Json(name = "twitch") twitch("twitch"),
-        @Json(name = "ustream") ustream("ustream"),
-        @Json(name = "iframe") iframe("iframe"),
-        @Json(name = "html5") html5("html5"),
-        @Json(name = "rtmp") rtmp("rtmp"),
-        @Json(name = "livestream") livestream("livestream"),
-        @Json(name = "direct_link") directLink("direct_link"),
-        @Json(name = "mms") mms("mms"),
-        @Json(name = "justin") justin("justin"),
-        @Json(name = "stemtv") stemtv("stemtv"),
-        @Json(name = "dacast") dacast("dacast");
-    }
+
+    enum class Type(val value: kotlin.String)
 }
 

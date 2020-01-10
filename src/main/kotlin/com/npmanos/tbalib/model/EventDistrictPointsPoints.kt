@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param total Total points awarded at this event.
@@ -24,19 +23,14 @@ import com.squareup.moshi.Json
 
 data class EventDistrictPointsPoints (
     /* Total points awarded at this event. */
-    @Json(name = "total")
     val total: kotlin.Int,
     /* Points awarded for alliance selection */
-    @Json(name = "alliance_points")
     val alliancePoints: kotlin.Int,
     /* Points awarded for elimination match performance. */
-    @Json(name = "elim_points")
     val elimPoints: kotlin.Int,
     /* Points awarded for event awards. */
-    @Json(name = "award_points")
     val awardPoints: kotlin.Int,
     /* Points awarded for qualification match performance. */
-    @Json(name = "qual_points")
     val qualPoints: kotlin.Int
 ) 
 

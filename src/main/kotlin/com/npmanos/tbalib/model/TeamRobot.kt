@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param year Year this robot competed in.
@@ -23,16 +22,12 @@ import com.squareup.moshi.Json
 
 data class TeamRobot (
     /* Year this robot competed in. */
-    @Json(name = "year")
     val year: kotlin.Int,
     /* Name of the robot as provided by the team. */
-    @Json(name = "robot_name")
     val robotName: kotlin.String,
     /* Internal TBA identifier for this robot. */
-    @Json(name = "key")
     val key: kotlin.String,
     /* TBA team key for this robot. */
-    @Json(name = "team_key")
     val teamKey: kotlin.String
 ) 
 

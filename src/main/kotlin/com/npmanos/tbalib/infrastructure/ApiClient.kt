@@ -1,10 +1,10 @@
 package com.npmanos.tbalib.infrastructure
 
-import okhttp3.OkHttpClient
 import com.npmanos.tbalib.api.*
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
-import retrofit2.converter.moshi.MoshiConverterFactory
 
 object ApiClient {
     private var baseUrl: String = "https://www.thebluealliance.com/api/v3"
@@ -25,7 +25,7 @@ object ApiClient {
         Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(ScalarsConverterFactory.create())
-            .addConverterFactory(MoshiConverterFactory.create(Serializer.moshi))
+                .addConverterFactory(GsonConverterFactory.create(Serializer.gson))
             .client(okHttpClient)
             .build()
     }

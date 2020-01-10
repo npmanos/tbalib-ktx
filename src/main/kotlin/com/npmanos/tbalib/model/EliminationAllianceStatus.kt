@@ -11,9 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.WLTRecord
-
-import com.squareup.moshi.Json
 /**
  * 
  * @param playoffAverage 
@@ -24,15 +21,10 @@ import com.squareup.moshi.Json
  */
 
 data class EliminationAllianceStatus (
-    @Json(name = "playoff_average")
     val playoffAverage: kotlin.Double? = null,
-    @Json(name = "level")
     val level: kotlin.String? = null,
-    @Json(name = "record")
     val record: WLTRecord? = null,
-    @Json(name = "current_level_record")
     val currentLevelRecord: WLTRecord? = null,
-    @Json(name = "status")
     val status: kotlin.String? = null
 ) 
 

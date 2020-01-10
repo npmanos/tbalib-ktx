@@ -11,10 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.TeamEventStatusRankRanking
-import com.npmanos.tbalib.model.TeamEventStatusRankSortOrderInfo
-
-import com.squareup.moshi.Json
 /**
  * 
  * @param numTeams Number of teams ranked.
@@ -25,14 +21,10 @@ import com.squareup.moshi.Json
 
 data class TeamEventStatusRank (
     /* Number of teams ranked. */
-    @Json(name = "num_teams")
     val numTeams: kotlin.Int? = null,
-    @Json(name = "ranking")
     val ranking: TeamEventStatusRankRanking? = null,
     /* Ordered list of names corresponding to the elements of the `sort_orders` array. */
-    @Json(name = "sort_order_info")
     val sortOrderInfo: kotlin.collections.List<TeamEventStatusRankSortOrderInfo>? = null,
-    @Json(name = "status")
     val status: kotlin.String? = null
 ) 
 

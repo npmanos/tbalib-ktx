@@ -11,9 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.WLTRecord
-
-import com.squareup.moshi.Json
 /**
  * Playoff status for this team, may be null if the team did not make playoffs, or playoffs have not begun.
  * @param level The highest playoff level the team reached.
@@ -25,17 +22,12 @@ import com.squareup.moshi.Json
 
 data class TeamEventStatusPlayoff (
     /* The highest playoff level the team reached. */
-    @Json(name = "level")
     val level: TeamEventStatusPlayoff.Level? = null,
-    @Json(name = "current_level_record")
     val currentLevelRecord: WLTRecord? = null,
-    @Json(name = "record")
     val record: WLTRecord? = null,
     /* Current competition status for the playoffs. */
-    @Json(name = "status")
     val status: TeamEventStatusPlayoff.Status? = null,
     /* The average match score during playoffs. Year specific. May be null if not relevant for a given year. */
-    @Json(name = "playoff_average")
     val playoffAverage: kotlin.Int? = null
 ) 
 
@@ -45,23 +37,14 @@ data class TeamEventStatusPlayoff (
     * The highest playoff level the team reached.
     * Values: qm,ef,qf,sf,f
     */
-    
-    enum class Level(val value: kotlin.String){
-        @Json(name = "qm") qm("qm"),
-        @Json(name = "ef") ef("ef"),
-        @Json(name = "qf") qf("qf"),
-        @Json(name = "sf") sf("sf"),
-        @Json(name = "f") f("f");
-    }
+
+    enum class Level(val value: kotlin.String)
+
     /**
     * Current competition status for the playoffs.
     * Values: won,eliminated,playing
     */
-    
-    enum class Status(val value: kotlin.String){
-        @Json(name = "won") won("won"),
-        @Json(name = "eliminated") eliminated("eliminated"),
-        @Json(name = "playing") playing("playing");
-    }
+
+    enum class Status(val value: kotlin.String)
 }
 

@@ -1,14 +1,11 @@
 package com.npmanos.tbalib.api
 
-import com.npmanos.tbalib.infrastructure.CollectionFormats.*
-import retrofit2.http.*
-import retrofit2.Response
-import okhttp3.RequestBody
-import okhttp3.ResponseBody
-import okhttp3.MultipartBody
-
 import com.npmanos.tbalib.model.Match
 import com.npmanos.tbalib.model.MatchSimple
+import retrofit2.Response
+import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.Path
 
 interface MatchApiService {
     /**

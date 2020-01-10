@@ -12,7 +12,6 @@
 package com.npmanos.tbalib.model
 
 
-import com.squareup.moshi.Json
 /**
  * 
  * @param abbreviation The short identifier for the district.
@@ -23,16 +22,12 @@ import com.squareup.moshi.Json
 
 data class DistrictList (
     /* The short identifier for the district. */
-    @Json(name = "abbreviation")
     val abbreviation: kotlin.String,
     /* The long name for the district. */
-    @Json(name = "display_name")
     val displayName: kotlin.String,
     /* Key for this district, e.g. `2016ne`. */
-    @Json(name = "key")
     val key: kotlin.String,
     /* Year this district participated. */
-    @Json(name = "year")
     val year: kotlin.Int
 ) 
 

@@ -11,9 +11,6 @@
 */
 package com.npmanos.tbalib.model
 
-import com.npmanos.tbalib.model.MatchScoreBreakdown2015Alliance
-
-import com.squareup.moshi.Json
 /**
  * See the 2015 FMS API documentation for a description of each value
  * @param blue 
@@ -23,13 +20,9 @@ import com.squareup.moshi.Json
  */
 
 data class MatchScoreBreakdown2015 (
-    @Json(name = "blue")
     val blue: MatchScoreBreakdown2015Alliance? = null,
-    @Json(name = "red")
     val red: MatchScoreBreakdown2015Alliance? = null,
-    @Json(name = "coopertition")
     val coopertition: MatchScoreBreakdown2015.Coopertition? = null,
-    @Json(name = "coopertition_points")
     val coopertitionPoints: kotlin.Int? = null
 ) 
 
@@ -39,11 +32,7 @@ data class MatchScoreBreakdown2015 (
     * 
     * Values: none,unknown,stack
     */
-    
-    enum class Coopertition(val value: kotlin.String){
-        @Json(name = "None") none("None"),
-        @Json(name = "Unknown") unknown("Unknown"),
-        @Json(name = "Stack") stack("Stack");
-    }
+
+    enum class Coopertition(val value: kotlin.String)
 }
 
